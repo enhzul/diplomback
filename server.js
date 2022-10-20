@@ -1,0 +1,15 @@
+const express = require("express");
+const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
+const cors = require("cors");
+const router = express.Router();
+dotenv.config({ path: "./config/config.env" });
+const jobs = require("./routers/JobRouter");
+const logger = require("./middleware/logger");
+const app = express();
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(logger);
+app.use("/api/job", jobs);
+app.listen(process.env.PORT, console.log(`localhost:${process.env.PORT}`));
