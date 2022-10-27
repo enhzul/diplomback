@@ -1,5 +1,4 @@
 const { default: axios } = require("axios");
-const { Router } = require("express");
 const express = require("express");
 var cron = require("node-cron");
 const {
@@ -15,7 +14,7 @@ router.route("/puppeteer").post(postPuppeteer);
 
 router.route("/:id").get(getCategory);
 cron.schedule(" * * * * *", () => {
-  axios({ method: "get", url: "http://localhost:8990/api/job/" });
+  axios({ method: "get", url: "http://localhost:8990/api/jobs/" });
   console.log("--------");
 });
 module.exports = router;

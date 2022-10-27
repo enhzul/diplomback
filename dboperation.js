@@ -1,7 +1,6 @@
 const dbconfig = require("./config/dbconfig");
 const sql = require("mssql");
 const { response } = require("express");
-
 async function getRole() {
   try {
     let pool = await sql.connect(dbconfig);
