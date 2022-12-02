@@ -1,0 +1,6 @@
+SELECT [id]
+      ,[name]
+      ,[department_id]
+      ,[created_at]
+      ,[updated_dat]
+  FROM [dp].[dbo].[mergejil]
