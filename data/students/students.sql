@@ -8,6 +8,7 @@ SELECT userName,
       ,[school_startEnd]
       ,tsol.zeregName
       ,st.created_at
+      ,st.visible
   FROM [dp].[dbo].[students] st
 left join departments d on d.id=st.department_id
 LEFT JOIN tsolZereg tsol on tsol.id = st.zereg_id
